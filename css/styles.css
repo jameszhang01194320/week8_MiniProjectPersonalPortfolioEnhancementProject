@@ -1,0 +1,130 @@
+/* General styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+/* Header styles */
+header {
+    background: url('../coding-temple.png') no-repeat left center;
+    background-size: auto 60%; /* Set height to 60% of header height */
+    background-position: 50px center; /* Add 100px padding to the left */
+    text-align: center;
+    color: rgb(233, 73, 73);
+    padding: 20px 0;
+    height: 70px; /* Set height of header */
+    position: relative; /* Ensure header is positioned properly */
+}
+
+.oval-image-container {
+    width: 100px; /* Set the desired width */
+    height: 110px; /* Set the desired height to maintain aspect ratio */
+    border-radius: 50%; /* Make it oval */
+    overflow: hidden; /* Ensure the image does not overflow the container */
+    border: 2px solid #625d5d; /* Add a border */
+    box-shadow: 5px 5px 2px rgba(104, 105, 105, 0.5); /* Add a shadow   box-shadow: 15px 10px 20px rgba(0,0,0,.8); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.oval-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
+}
+
+
+
+.header-content h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #666;
+    position: relative; /* Ensure nav is positioned correctly */
+    z-index: 1; /* Ensure nav is above any background images */
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.nav-menu li {
+    color: white;
+}
+
+.nav-menu a {
+    color: white; /* Set text color to white */
+    text-decoration: none; /* Remove underline */
+}
+
+.nav-menu a:hover {
+    text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+/* Main content styles */
+main {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to one column */
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 66% 33%; /* Two columns with specific widths */
+    grid-template-rows: 610px; /* Set the height of rows to 500px */
+    width: 100%;
+}
+
+.content .box {
+    background-color: #f4f4f4;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    max-height: 600px; /* Limit the maximum height */
+    overflow-y: auto; /* Add vertical scroll if content overflows */
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-section {
+    margin: 0 10px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer {
+        grid-template-columns: 1fr; /* Single column for small screens */
+        align-items: center;
+    }
+
+    .content {
+        grid-template-columns: 1fr; /* Single column for small screens */
+        grid-template-rows: auto; /* Allow rows to adjust height */
+    }
+}
